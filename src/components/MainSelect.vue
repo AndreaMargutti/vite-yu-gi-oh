@@ -1,3 +1,4 @@
+<!--Creo il componente-->
 <script>
 export default {
   data() {
@@ -10,6 +11,7 @@ export default {
 
 <template>
   <section>
+    <!--Creo la select con le options-->
     <select class="my-3">
       <option value="alien" selected>Alien</option>
       <option value="spell">Spell</option>

@@ -1,3 +1,4 @@
+<!--Creo il componente-->
 <script>
 export default {
   data() {
