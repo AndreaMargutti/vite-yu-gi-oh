@@ -4,15 +4,25 @@ export default {
     return {
       
     }
+  },
+  
+  props: {
+    cardObj : {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
 
 <template>
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <div class="card w-100">
+  <img :src="cardObj.card_images.image_url" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">
+      {{ cardObj.name }}
+      {{ cardObj.archetype }}
+    </p>
   </div>
 </div>
 </template>

@@ -9,6 +9,7 @@ export default {
 
   data() {
     return {
+      cardsList: [],
       apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0"
     }
   },
@@ -19,7 +20,8 @@ export default {
       axios.get(this.apiUrl)
         .then((response) => {
           // handle success
-          console.log(response);
+          console.log(response.data.data);
+          this.cardsList = response.data.data
         })
         .catch((error) => {
           // handle error
@@ -40,8 +42,8 @@ export default {
       <div id="card-counter" class="mb-3">
         <span class="fw-bold d-inline align-middle">Ho trovato 40 carte</span>
       </div>
-      <div class="col-3">
-        <MainCards />
+      <div class="col-3 mb-2" v-for="cardItem in cardsList" :key="cardItem.id">
+        <MainCards :cardObj="cardItem"/>
       </div>
     </section>
 </template>
