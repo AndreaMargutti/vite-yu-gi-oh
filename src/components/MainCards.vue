@@ -1,5 +1,10 @@
 <script>
+import MainLoader from './MainLoader.vue';
 export default {
+  components: {
+    MainLoader
+  },
+
   data() {
     return {
       
@@ -16,6 +21,9 @@ export default {
 </script>
 
 <template>
+  <!--Loader-->
+  <MainLoader />
+  <!--Start of Card section-->
   <div class="card">
   <img :src="cardObj.card_images[0].image_url" class="card-img-top" alt="...">
   <div class="card-body">
