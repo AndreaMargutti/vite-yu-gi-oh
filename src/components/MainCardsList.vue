@@ -1,16 +1,38 @@
 <script>
 import MainCards from './MainCards.vue';
+import axios from 'axios';
 
 export default {
-  data() {
-    return {
-      
-    }
-  },
   components: {
     MainCards
+  },
+
+  data() {
+    return {
+      apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0"
+    }
+  },
+
+  methods:{
+    getCards(){
+      // Make a request for a user with a given ID
+      axios.get(this.apiUrl)
+        .then((response) => {
+          // handle success
+          console.log(response);
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        })
+    } 
+  },
+
+  created(){
+    this.getCards();
   }
-}
+  }
+
 </script>
 
 <template>
