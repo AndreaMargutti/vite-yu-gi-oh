@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <div class="card w-100">
+  <div class="card">
   <img :src="cardObj.card_images[0].image_url" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-text">
