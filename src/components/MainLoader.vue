@@ -9,7 +9,8 @@ export default {
 </script>
 
 <template>
-    <div class="loader"></div>
+    <div class="loader">
+    </div>
 </template>
 
 <style scoped>
@@ -25,6 +26,9 @@ Link: https://css-loaders.com/factory/
   background: var(--g),var(--g);
   background-size: 60px 14px,60px 14px;
   animation: l8 1s infinite linear;
+  position: relative;
+  left: 50%;
+  top: 50%;
 }
 @keyframes l8 {
   0%   {background-position:0    0,0    100%}

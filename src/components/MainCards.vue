@@ -1,10 +1,5 @@
 <script>
-import MainLoader from './MainLoader.vue';
 export default {
-  components: {
-    MainLoader
-  },
-
   data() {
     return {
       

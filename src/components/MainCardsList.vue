@@ -1,10 +1,12 @@
 <script>
 import MainCards from './MainCards.vue';
+import MainLoader from './MainLoader.vue';
 import axios from 'axios';
 import { store } from "../store.js"
 
 export default {
   components: {
+    MainLoader,  
     MainCards
   },
 
@@ -33,7 +35,7 @@ export default {
   },
 
   created(){
-    this.getCards();
+    setTimeout(this.getCards, 1000);
   }
   }
 
@@ -44,7 +46,8 @@ export default {
       <div id="card-counter" class="mb-3">
         <span class="fw-bold d-inline align-middle">Ho trovato {{ store.cardsList.length }} </span>
       </div>
-      <div class="col-3 mb-2 d-flex" v-for="cardItem in store.cardsList" :key="cardItem.id">
+      <MainLoader v-if="store.cardsList.length === 0" />
+      <div class="col-3 mb-2 d-flex" v-for="cardItem in store.cardsList" :key="cardItem.id" v-else>
         <MainCards :cardObj="cardItem"/>
       </div>
     </section>
@@ -54,6 +57,7 @@ export default {
   section {
     background-color: white;
     padding: 2rem;
+    position: relative;
       #card-counter {
         background-color: #212429;
         min-height: 30px;
