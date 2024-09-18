@@ -36,11 +36,13 @@ export default {
 </script>
 
 <template>
-    <section class="row">
-      <div id="card-counter">
+  <section class="row">
+      <div id="card-counter" class="mb-3">
         <span class="fw-bold d-inline align-middle">Ho trovato 40 carte</span>
       </div>
-      <MainCards />
+      <div class="col-3">
+        <MainCards />
+      </div>
     </section>
 </template>
 
