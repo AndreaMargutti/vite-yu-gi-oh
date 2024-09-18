@@ -9,7 +9,14 @@ export default {
 </script>
 
 <template>
-    <h1>Main Select</h1>
+  <section>
+    <select class="my-3">
+      <option value="alien" selected>Alien</option>
+      <option value="spell">Spell</option>
+      <option value="trap">Trap</option>
+      <option value="fusion">Fusion</option>
+    </select>
+  </section>
 </template>
 
 <style scoped>

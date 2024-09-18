@@ -16,8 +16,7 @@ export default {
 </script>
 
 <template>
-    <main>
-        <h1>Main</h1>
+    <main class="container">
         <MainSelect />
         <MainCardsList />
     </main>
