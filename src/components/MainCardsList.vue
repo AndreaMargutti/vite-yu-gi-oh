@@ -55,7 +55,6 @@ export default {
     //..imposto un timer di due secondi...
     setTimeout(
       this.getCards(),
-      this.$emit('get-archetypes'), 
       1000); //..eseguo il metodo che chiama l'API
   }
   }
