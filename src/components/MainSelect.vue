@@ -14,7 +14,7 @@ export default {
       archetypesApiUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
       //Creata la lista di archetipo "libera"
       archetypesList: [],
-      selectedArchetype: ""
+      selectedArchetype: "",
     }
   },
   
@@ -33,15 +33,16 @@ export default {
             console.log(error);
           });
     },
-
-    onSelect() {
-      this.$emit()
-    }
   },
 
   mounted() {
-    this.getArchetypes(); //Chiamo il metodo
+    this.getArchetypes()
+  },
+
+  updated(){
+    console.log(this.selectedArchetype) // Il valore della variabile viene aggiornata (guarda in console)
   }
+  
 }
 </script>
 

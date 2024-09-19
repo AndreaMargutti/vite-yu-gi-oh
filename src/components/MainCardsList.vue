@@ -14,6 +14,13 @@ export default {
     MainCards
   },
 
+  props: {
+    selectedValue: {
+      type: String,
+      require: false
+    }
+  },
+
   data() {
     return {
       //Creo array vuoto per l'array di oggetti contente le info delle carte
@@ -42,10 +49,14 @@ export default {
         })
     } 
   },
+
   //Una volta creata la pagina...
   created(){
     //..imposto un timer di due secondi...
-    setTimeout(this.getCards, 1000); //..eseguo il metodo che chiama l'API
+    setTimeout(
+      this.getCards(),
+      this.$emit('get-archetypes'), 
+      1000); //..eseguo il metodo che chiama l'API
   }
   }
 
