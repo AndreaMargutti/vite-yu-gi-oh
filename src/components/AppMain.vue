@@ -1,7 +1,7 @@
 <script>
 // Importo i componenti necessari
-import MainCardsList from './MainCardsList.vue';
 import MainSelect from './MainSelect.vue';
+import MainCardsList from './MainCardsList.vue';
 
 export default {
   data() {

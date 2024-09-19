@@ -10,15 +10,16 @@ export default {
 </script>
 
 <template>
-    <div class="loader">
-    </div>
+    <div class="loader"></div>
 </template>
 
 <style scoped>
+
 /*
 Credits:  Temani Afif
 Link: https://css-loaders.com/factory/
 */
+
 .loader {
   width: 90px;
   height: 30px;
@@ -31,6 +32,7 @@ Link: https://css-loaders.com/factory/
   left: 50%;
   top: 50%;
 }
+
 @keyframes l8 {
   0%   {background-position:0    0,0    100%}
   100% {background-position:60px 0,60px 100%}

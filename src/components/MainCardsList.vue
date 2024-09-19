@@ -1,7 +1,7 @@
 <script>
 //Importo i componenti necessari pt.1
-import MainCards from './MainCards.vue';
 import MainLoader from './MainLoader.vue';
+import MainCards from './MainCards.vue';
 //Importo Axios
 import axios from 'axios';
 //Importo la store dal file store.js
