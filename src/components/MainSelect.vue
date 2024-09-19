@@ -43,7 +43,9 @@ export default {
       <!--Aggiunto opzione "titolo"-->
       <option value="" disabled selected>Select Archetypes</option>
       <!--Generate opzioni tanti quanti gli archetipi presenti nell'array ricavato dall'API-->
-      <option value="" v-for="archetype in this.archetypesList"> {{ archetype.archetype_name }}</option>
+      <option :value="archetype.archetype_name" v-for="(archetype, index) in this.archetypesList" :key="index"> 
+        {{ archetype.archetype_name }}
+      </option>
     </select>
   </section>
 </template>
