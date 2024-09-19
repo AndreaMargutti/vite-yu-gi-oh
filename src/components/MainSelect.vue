@@ -2,14 +2,19 @@
 <script>
 //Importato axios
 import axios from 'axios';
+import MainCardsList from './MainCardsList.vue';
 
 export default {
+  components: {
+    MainCardsList
+  },
   data() {
     return {
       //Aggiunto URL dell'API riguardante gli archetipi
       archetypesApiUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
       //Creata la lista di archetipo "libera"
       archetypesList: [],
+      selectedArchetype: ""
     }
   },
   
@@ -27,6 +32,10 @@ export default {
             // handle error
             console.log(error);
           });
+    },
+
+    onSelect() {
+      this.$emit()
     }
   },
 
@@ -39,7 +48,7 @@ export default {
 <template>
   <section>
     <!--Creo la select con le options-->
-    <select class="my-3">
+    <select class="my-3" v-model="selectedArchetype">
       <!--Aggiunto opzione "titolo"-->
       <option value="" disabled selected>Select Archetypes</option>
       <!--Generate opzioni tanti quanti gli archetipi presenti nell'array ricavato dall'API-->
@@ -47,6 +56,9 @@ export default {
         {{ archetype.archetype_name }}
       </option>
     </select>
+  </section>
+  <section>
+    <MainCardsList/>
   </section>
 </template>
 

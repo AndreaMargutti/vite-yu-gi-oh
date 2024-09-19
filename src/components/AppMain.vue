@@ -21,7 +21,7 @@ export default {
   <!--Inserisco i due componenti all'interno di un container-->
     <main class="container">
         <MainSelect />
-        <MainCardsList />
+
     </main>
 </template>
 
