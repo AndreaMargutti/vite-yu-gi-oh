@@ -1,5 +1,6 @@
 <!--Creo il componente-->
 <script>
+//Importato axios
 import axios from 'axios';
 
 export default {
@@ -13,13 +14,14 @@ export default {
   },
   
   methods: {
+    //Funzione per chiamare l'API
     getArchetypes(){
       axios.get(this.archetypesApiUrl)
         .then((response) => {
           // handle success
           console.log(response);
-          this.archetypesList = response.data
-          console.log(this.archetypesList)
+          this.archetypesList = response.data // Aggiungi gli archetipi all'array precedentemente creato
+          console.log(this.archetypesList) //Loggami l'array aggiornato
           })
           .catch(function (error) {
             // handle error
@@ -28,8 +30,8 @@ export default {
     }
   },
 
-  created() {
-    this.getArchetypes();
+  mounted() {
+    this.getArchetypes(); //Chiamo il metodo
   }
 }
 </script>
@@ -38,10 +40,10 @@ export default {
   <section>
     <!--Creo la select con le options-->
     <select class="my-3">
-      <option value="alien" selected>Alien</option>
-      <option value="spell">Spell</option>
-      <option value="trap">Trap</option>
-      <option value="fusion">Fusion</option>
+      <!--Aggiunto opzione "titolo"-->
+      <option value="" disabled selected>Select Archetypes</option>
+      <!--Generate opzioni tanti quanti gli archetipi presenti nell'array ricavato dall'API-->
+      <option value="" v-for="archetype in this.archetypesList"> {{ archetype.archetype_name }}</option>
     </select>
   </section>
 </template>
