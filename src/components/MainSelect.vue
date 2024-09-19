@@ -1,10 +1,35 @@
 <!--Creo il componente-->
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      
+      //Aggiunto URL dell'API riguardante gli archetipi
+      archetypesApiUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+      //Creata la lista di archetipo "libera"
+      archetypesList: [],
     }
+  },
+  
+  methods: {
+    getArchetypes(){
+      axios.get(this.archetypesApiUrl)
+        .then((response) => {
+          // handle success
+          console.log(response);
+          this.archetypesList = response.data
+          console.log(this.archetypesList)
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
+    }
+  },
+
+  created() {
+    this.getArchetypes();
   }
 }
 </script>
